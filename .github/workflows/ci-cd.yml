@@ -7,25 +7,20 @@ on:
 jobs:
   build-test:
     runs-on: ubuntu-latest
+    
     steps:
-      # 1. Клонируем репозиторий
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      # 2. Устанавливаем Python
+      - uses: actions/checkout@v4
+      
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.10'  # Лучше указать точную версию
-
-      # 3. Устанавливаем зависимости и pytest
+          python-version: '3.10'
+          
       - name: Install dependencies
         run: |
-          python -m pip install --upgrade pip
-          pip install pytest  # Убедитесь, что pytest есть в requirements.txt
+          pip install pytest
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-
-      # 4. Запускаем тесты
+          
       - name: Run tests
         run: |
-          pytest
+          pytest tests/ -v  # -v для подробного вывода
