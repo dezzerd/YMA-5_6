@@ -1,0 +1,8 @@
+setup.py
+tests/__init__.py
+tests/test_app.py
+yma_project.egg-info/PKG-INFO
+yma_project.egg-info/SOURCES.txt
+yma_project.egg-info/dependency_links.txt
+yma_project.egg-info/requires.txt
+yma_project.egg-info/top_level.txt
